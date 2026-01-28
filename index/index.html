@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="app/app.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chả Cá Hàng Sơn - Cửa Hàng Trực Tuyến</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>🍗 Chả Cá Hàng Sơn</h1>
+        <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Tìm tên món ăn..." onkeyup="searchProduct()">
+    <span class="search-icon">🔍</span>
+</div>  
+        <div class="navbar-right">
+            <span class="user-info" id="username-display">👤 Khách hàng</span>
+            <div class="cart-icon" onclick="openCart()">
+                🛍️
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <button class="btn-logout" onclick="logout()">Đăng Xuất</button>
+        </div>
+    </div>
+
+    <!-- Menu -->
+    <div class="menu">
+        <div class="menu-container">
+    <a class="menu-item active" onclick="showCategory('all')">🏠 Trang Chủ</a>
+    <a class="menu-item" onclick="showCategory('khai vi')">Khai vị</a>
+    <a class="menu-item" onclick="showCategory('mon chinh')">Món Chính</a>
+    <a class="menu-item" onclick="showCategory('lau')">Lẩu cá</a>
+    <a class="menu-item" onclick="showCategory('menu')">Menu trẻ em</a>
+    <a class="menu-item" onclick="showCategory('do uong')">Đồ Uống</a>
+    <a class="menu-item" onclick="showCategory('trang mieng')">Tráng miệng</a>
+    <a class="menu-item" onclick="showCategory('do uong co con')">Đồ uống có cồn</a>
+    <div class="dropdown">
+        <a class="menu-item">🎁 Combo tiết kiệm ▼</a>
+        <div class="dropdown-content">
+            <a onclick="showCategory('combo1')">Combo 1</a>
+            <a onclick="showCategory('combo 1 Đặc biệt')">Combo 1 Đặc biệt</a>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Banner -->
+    <div class="banner">
+        <h2>Chào Mừng Đến Chả Cá Hàng Sơn</h2>
+        <p>CHẢ CÁ HÀ THÀNH CHUẨN VỊ TRUYỀN THỐNG
+
+            
+        </p>
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+        <h2 class="section-title">🔥 Sản Phẩm Đặc Biệt</h2>
+        <div class="products-grid" id="productsGrid"></div>
+    </div>
+
+    <!-- Modal Giỏ Hàng -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">📦 Giỏ Hàng Của Tôi</div>
+            <div id="cartItems"></div>
+            <div class="modal-footer">
+                <div class="total-price" id="totalPrice">Tổng: 0 VNĐ</div>
+                <button class="btn-checkout" onclick="checkout()">Thanh Toán</button>
+                <button class="btn-close-modal" onclick="closeCart()">Đóng</button>
+            </div>
+        </div>
+    </div>
+<div id="toast-container"></div>
+
+<div id="invoice-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 99999; justify-content: center; align-items: center; flex-direction: column;">
+    
+    <div id="invoice-capture" style="background: white; padding: 30px; border-radius: 4px; width: 350px; color: black; font-family: 'Courier New', Courier, monospace; box-shadow: 0 0 20px rgba(0,0,0,0.2);">
+        <h2 style="text-align: center; margin-bottom: 5px; color: #8B4513;">CHẢ CÁ HÀNG SƠN</h2>
+        <p style="text-align: center; font-size: 12px; margin-bottom: 10px;">HÓA ĐƠN THANH TOÁN</p>
+        <p style="text-align: center; font-size: 10px;" id="invoice-date"></p>
+        <div style="border-top: 1px dashed #000; margin: 10px 0;"></div>
+        
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <th style="text-align: left;">Món</th>
+                    <th style="text-align: center;">SL</th>
+                    <th style="text-align: right;">Tiền</th>
+                </tr>
+            </thead>
+            <tbody id="invoice-items-list">
+                </tbody>
+        </table>
+        
+        <div style="border-top: 1px dashed #000; margin: 10px 0;"></div>
+        <h3 id="invoice-total-display" style="text-align: right; font-size: 20px; color: #e74c3c;"></h3>
+        <p style="text-align: center; font-size: 10px; margin-top: 20px;">Cảm ơn quý khách! Hẹn gặp lại.</p>
+    </div>
+
+    <div style="margin-top: 20px; display: flex; gap: 10px; width: 350px;">
+        <button onclick="downloadInvoice()" style="flex: 1; padding: 12px; background: #27ae60; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+             LƯU ẢNH
+        </button>
+        <button onclick="closeInvoice()" style="flex: 1; padding: 12px; background: #e74c3c; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+            ĐÓNG
+        </button>
+    </div>
+</div>
+</body>
+</html>
