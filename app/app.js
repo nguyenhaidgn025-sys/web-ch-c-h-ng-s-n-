@@ -1,46 +1,50 @@
 
     // 1. Dữ liệu và Khởi tạo
 const products = [
-    { id: 1, name: 'Nem cá lăng', category: 'khai vi', price: 20000, image: 'images/Nem cá lăng.jpg' },
-    { id: 2, name: 'Cá lăng trộn cay', category: 'khi vi', price: 225000, image: 'images/Cá lăng trộn cay.jpg' },
-    { id: 3, name: 'Canh đầu cá nấu chua', category: 'mon chinh', price: 225000, image: 'images/Canh chua.jpg' },
-    { id: 4, name: 'Chả cá Lăng', category: 'mon chinh', price: 175000, image: 'images/Chả cá đặc biệt.jpg' },
-   { id: 5, name: 'Nộm hoa chuối', category: 'khai vi', price: 95000, description: 'Có vị chua ngọt và giòn của hoa chuối', image: 'images/Nộm hoa chuối.jpg' },
-            { id: 6, name: 'Nộm rau má', category: 'khai vi', price: 145000, description: 'Nộm rau má ruốc cá lăng, bổ dưỡng', image: 'images/Nộm rau má ruốc cá lăng.jpg' },
+            { id: 1, name: 'Nem cá lăng', category: 'khai vi', price: 20000, description: 'Vỏ nem giòn, nhân cá đậm vị và thơm mùi tiêu', image: 'images/Nem cá lăng.jpg' },
+            { id: 2, name: 'Cá lăng trộn cay', category: 'khi vi', price: 225000, description: 'Có vị chua ngọt, thịt cá được chần chín tới cuốn cùng lá lốt, hành tây', image: 'images/Cá lăng trộn cay.jpg' },
+            { id: 3, name: 'Canh đầu cá nấu chua', category: 'mon chinh', price: 225000, description: 'Có vị chua thanh, ăn kèm giá đỗ và dọc mùng', image: 'images/Canh chua.jpg' },
+            { id: 4, name: 'Chả cá Lăng', category: 'mon chinh', price: 175000, description: 'Cá Lăng tinh tuyển từ 2 - 2.5kg, nướng than hoa, thịt mềm, ngọt', image: 'images/Chả cá đặc biệt.jpg' },
+            { id: 5, name: 'Nộm hoa chuối', category: 'khai vi', price: 95000, description: 'Có vị chua ngọt và giòn của hoa chuối', image: 'images/Nộm hoa chuối.jpg' },
+            { id: 6, name: 'Nộm rau má', category: 'khai vi', price: 145000, description: 'Có vị chua ngọt, ngăm ngăm đắng của rau má và vị ngậy của ruốc cá.', image: 'images/Nộm rau má ruốc cá lăng.jpg' },
             { id: 7, name: 'Lạp xưởng cá Lăng', category: 'khai vi', price: 125000, description: 'Vỏ lạp xưởng giòn, bên trong có sụn giòn sần sật', image: 'images/Lạp xưởng cá Lăng.jpg' },
             { id: 8, name: 'Gà popcorn lắc phô mai', category: 'menu', price: 95000, description: 'Viên gà giòn phủ lớp phô mai béo ngậy', image: 'images/Gà popcorn lắc phô mai.jpg' },
-            { id: 9, name: 'Tortilla ruốc cá Lăng', category: 'menu', price: 85000, description: 'Bánh tortilla vàng giòn, vị phô mai chảy và vị ngậy đặc trưng của ruốc cá', image: 'images/Tortilla ruốc cá Lăng.jpg' },
-            { id: 10, name: 'Lòng cá Lăng', category: 'mon chinh', price: 145000, description: 'Giòn, thơm mùi tiêu xào', image: 'images/Lòng cá Lăng.jpg' },
-            { id: 11, name: 'Lẩu cá Lăng đặc biệt', category: 'lau', price: 445000, description: 'Nước lẩu chua thanh, có vị cay nhẹ giống lẩu Thái phục vụ kèm cá Lăng fille và sốt chấm làm từ rễ rau mùi đặc biệt', image: 'images/Lẩu cá Lăng đặc biệt.jpg' },
-            { id: 12, name: 'Lẩu đầu cá Lăng', category: 'lau', price: 315000, description: 'Nước lẩu chua thanh, có vị cay nhẹ giống lẩu Thái ăn kèm sốt chấm làm từ rễ rau mùi đặc biệt', image: 'images/Lẩu đầu cá Lăng đặc biệt.jpg' },
-            { id: 13, name: 'Cháo cá Lăng', category: 'mon chinh', price: 135000, description: 'Có vị bùi ngậy của đỗ xanh và vị ngọt của cá Lăng', image: 'images/Cháo cá Lăng.jpg' },
-            { id: 14, name: 'Đầu cá Lăng om chuối đậu', category: 'mon chinh', price: 285000, description: 'Nước om sánh vàng của chuối đậu; nguyên liệu đều là đồ tươi dùng trong ngày', image: 'images/Đầu cá Lăng om chuối đậu.jpg' },
-            { id: 15, name: 'Trà vải', category: 'do uong', price: 45000, description: 'Trà mía lá nếp mang đến thanh mát tự nhiên của mía và vị đậm của trà đen, vị quế thơm đặc trưng', image: 'images/Trà vải.jpg' },
-            { id: 16, name: 'Trà thanh yên', category: 'do uong', price: 40000, description: 'Có vị chua ngọt dịu và vị thơm của mứt thanh yên', image: 'images/Trà thanh yên.jpg' },
-            { id: 17, name: 'Trà bí đao chanh ', category: 'do uong', price: 45000, description: 'Thức uống giải nhiệt, kết hợp giữa vị ngọt thanh của bí đao và vị chua thơm nhẹ của chanh vàng', image: 'images/Trà bí đao chanh.jpg' },
-            { id: 18, name: 'Hoa quả theo mùa', category: 'trang mieng', price: 95000, description: 'Hoa quả tươi ngon theo mùa', image: 'images/Hoa quả theo mùa.jpg' },
-            { id: 19, name: 'Chè sương sáo', category: 'trang mieng', price: 95000, image: 'images/Chè sương sáo.jpg' },
-            { id: 20, name: 'Bia Hà Nội', category: 'do uong co con', price: 30000, image: 'images/Bia Hà Nội.jpg' },
-            { id: 21, name: 'Bia Sài Gòn', category: 'do uong co con', price: 35000, image: 'images/Bia Sài Gòn.jpg' },
-            { id: 22, name: 'Bia Heiniken', category: 'do uong co con', price: 30000, image: 'images/Bia Heiniken.jpg' },
-            { id: 23, name: 'Bia Trúc Bạch', category: 'do uong co con', price: 30000, image: 'images/Bia Trúc Bạch.jpg' },
-            { id: 24, name: 'Bia Tiger', category: 'do uong co con', price: 30000, image: 'images/Bia Tiger.jpg' },
-            { id: 25, name: 'Bia Tiger Bạc', category: 'do uong co con', price: 30000, image: 'images/Bia Tiger Bạc.jpg' },
-            { id: 26, name: 'Lẩu cá Lăng', category: 'lau', price: 445000, description: 'Nước lẩu chua thanh, có vị cay nhẹ giống lẩu Thái phục vụ kèm cá Lăng fille và sốt chấm làm từ rễ rau mùi đặc biệt', image: 'images/Lẩu cá Lăng đặc biệt.jpg' },
+            { id: 9, name: 'Khoai tây chiên', category: 'menu', price: 30000, image: 'images/Khoai tây chiên.jpg' },
+            { id: 10, name: 'Khoai tây chiên lắc phô mai', category: 'menu', price: 30000, image: 'images/Khoai tây chiên lắc phô mai.jpg' },
+            { id: 11, name: 'Ngô mỹ chiên bơ', category: 'menu', price: 30000, image: 'images/Ngô mỹ chiên bơ.jpg' },
+            { id: 12, name: 'Pizza bò bằm xúc xích', category: 'menu', price: 50000, description: 'Pizza nóng với toppings bò bằm và xúc xích, phô mai tan chảy', image: 'images/Pizza bò bằm xúc xích.jpg' },
+            { id: 13, name: 'Tortilla ruốc cá Lăng', category: 'menu', price: 85000, description: 'Bánh tortilla vàng giòn, vị phô mai chảy và vị ngậy đặc trưng của ruốc cá', image: 'images/Tortilla ruốc cá Lăng.jpg' },
+            { id: 14, name: 'Lòng cá Lăng', category: 'mon chinh', price: 145000, description: 'Giòn, thơm mùi tiêu xào', image: 'images/Lòng cá Lăng.jpg' },
+            { id: 15, name: 'Lẩu cá Lăng đặc biệt', category: 'lau', price: 445000, description: 'Nước lẩu chua thanh, có vị cay nhẹ giống lẩu Thái phục vụ kèm cá Lăng fille và sốt chấm làm từ rễ rau mùi đặc biệt', image: 'images/Lẩu cá Lăng đặc biệt.jpg' },
+            { id: 16, name: 'Lẩu đầu cá Lăng', category: 'lau', price: 315000, description: 'Nước lẩu chua thanh, có vị cay nhẹ giống lẩu Thái ăn kèm sốt chấm làm từ rễ rau mùi đặc biệt', image: 'images/Lẩu đầu cá Lăng đặc biệt.jpg' },
+            { id: 17, name: 'Lẩu cá Lăng', category: 'lau', price: 445000, description: 'Nước lẩu chua thanh, có vị cay nhẹ giống lẩu Thái phục vụ kèm cá Lăng fille và sốt chấm làm từ rễ rau mùi đặc biệt', image: 'images/Lẩu cá Lăng đặc biệt.jpg' },
+            { id: 18, name: 'Cháo cá Lăng', category: 'mon chinh', price: 135000, description: 'Có vị bùi ngậy của đỗ xanh và vị ngọt của cá Lăng', image: 'images/Cháo cá Lăng.jpg' },
+            { id: 19, name: 'Đầu cá Lăng om chuối đậu', category: 'mon chinh', price: 285000, description: 'Nước om sánh vàng của chuối đậu; nguyên liệu đều là đồ tươi dùng trong ngày', image: 'images/Đầu cá Lăng om chuối đậu.jpg' },
+            { id: 20, name: 'Trà vải', category: 'do uong', price: 45000, description: 'Trà vải thơm ngon, vị chua ngọt dịu', image: 'images/Trà vải.jpg' },
+            { id: 21, name: 'Trà thanh yên', category: 'do uong', price: 40000, description: 'Có vị chua ngọt dịu và vị thơm của mứt thanh yên', image: 'images/Trà thanh yên.jpg' },
+            { id: 22, name: 'Trà bí đao chanh ', category: 'do uong', price: 45000, description: 'Thức uống giải nhiệt, kết hợp giữa vị ngọt thanh của bí đao và vị chua thơm nhẹ của chanh vàng', image: 'images/Trà bí đao chanh.jpg' },
+            { id: 23, name: 'Nước ép dưa hấu', category: 'do uong', price: 30000, description: 'Nước ép dưa hấu tươi ngon, mát lạnh giải khát', image: 'images/Nước ép dưa hấu.jpg' },
+            { id: 24, name: 'Nước ép dứa', category: 'do uong', price: 30000, description: 'Nước ép dứa chua ngọt, giàu vitamin C', image: 'images/Nước ép dứa.jpg' },
+            { id: 25, name: 'Dasani', category: 'do uong', price: 30000, description: 'Nước tinh khiết Dasani, uống lạnh giải khát', image: 'images/Dasani.jpg' },
+            { id: 26, name: 'Coca cola', category: 'do uong', price: 30000, description: 'Coca cola lạnh, hương vị đặc trưng', image: 'images/Coca cola.jpg' },
             { id: 27, name: 'Trà đào', category: 'do uong', price: 45000, description: 'Trà mía lá nếp mang đến thanh mát tự nhiên của mía và vị đậm của trà đen, vị quế thơm đặc trưng', image: 'images/Trà đào.jpg' },
-            { id: 28, name: 'Bún đậu', category: 'mon chinh', price: 30000, image: 'images/Bún đậu.jpg' },
-            { id: 29, name: 'Bún ốc', category: 'mon chinh', price: 30000, image: 'images/Bún ốc.jpg' },
-            { id: 30, name: 'Bún riêu', category: 'mon chinh', price: 30000, image: 'images/Bún riêu.jpg' },
-            { id: 31, name: 'Khoai tây chiên', category: 'menu', price: 30000, image: 'images/Khoai tây chiên.jpg' },
-            { id: 32, name: 'Khoai tây chiên lắc phô mai', category: 'menu', price: 30000, image: 'images/Khoai tây chiên lắc phô mai.jpg' },
-            { id: 33, name: 'Ngô mỹ chiên bơ', category: 'menu', price: 30000, image: 'images/Ngô mỹ chiên bơ.jpg' },
-            { id: 34, name: 'Pizza bò bằm xúc xích', category: 'menu', price: 50000, description: 'Pizza nóng với toppings bò bằm và xúc xích, phô mai tan chảy', image: 'images/Pizza bò bằm xúc xích.jpg' },
-            { id: 35, name: 'Nước ép dưa hấu', category: 'do uong', price: 30000, description: 'Nước ép dưa hấu tươi ngon, mát lạnh giải khát', image: 'images/Nước ép dưa hấu.jpg' },
-            { id: 36, name: 'Nước ép dứa', category: 'do uong', price: 30000, description: 'Nước ép dứa chua ngọt, giàu vitamin C', image: 'images/Nước ép dứa.jpg' },
-            { id: 37, name: 'Dasani', category: 'do uong', price: 30000, description: 'Nước tinh khiết Dasani, uống lạnh giải khát', image: 'images/Dasani.jpg' },
-            { id: 38, name: 'Coca cola', category: 'do uong', price: 30000, description: 'Coca cola lạnh, hương vị đặc trưng', image: 'images/Coca cola.jpg' },
-            { id: 39, name: 'Combo 1', category: 'combo', price: 465000, description: 'Gồm 2 suất Chả cá Lăng + 1 suất lòng cá + 1 niêu cháo cá nhỏ', image: 'images/combo1.jpg' },
-            { id: 40, name: 'Combo 1 đặc biệt', category: 'combo', price: 565000, description: 'Gồm 2 suất chả cá Lăng đặc biệt + 1 suất lòng cá Lăng + 1 niêu cháo cá nhỏ', image: 'images/combo1.jpg' },
+            { id: 28, name: 'Hoa quả theo mùa', category: 'trang mieng', price: 95000, description: 'Hoa quả tươi ngon theo mùa', image: 'images/Hoa quả theo mùa.jpg' },
+            { id: 29, name: 'Chè sương sáo', category: 'trang mieng', price: 95000, image: 'images/Chè sương sáo.jpg' },
+            { id: 30, name: 'Bia Hà Nội', category: 'do uong co con', price: 30000, image: 'images/Bia Hà Nội.jpg' },
+            { id: 31, name: 'Bia Sài Gòn', category: 'do uong co con', price: 35000, image: 'images/Bia Sài Gòn.jpg' },
+            { id: 32, name: 'Bia Heiniken', category: 'do uong co con', price: 30000, image: 'images/Bia Heiniken.jpg' },
+            { id: 33, name: 'Bia Trúc Bạch', category: 'do uong co con', price: 30000, image: 'images/Bia Trúc Bạch.jpg' },
+            { id: 34, name: 'Bia Tiger', category: 'do uong co con', price: 30000, image: 'images/Bia Tiger.jpg' },
+            { id: 35, name: 'Bia Tiger Bạc', category: 'do uong co con', price: 30000, image: 'images/Bia Tiger Bạc.jpg' },
+            { id: 36, name: 'Bún đậu', category: 'mon chinh', price: 30000, image: 'images/Bún đậu.jpg' },
+            { id: 37, name: 'Bún ốc', category: 'mon chinh', price: 30000, image: 'images/Bún ốc.jpg' },
+            { id: 38, name: 'Bún riêu', category: 'mon chinh', price: 30000, image: 'images/Bún riêu.jpg' },
+            { id: 39, name: 'Khoai tây chiên', category: 'menu', price: 30000, image: 'images/Khoai tây chiên.jpg' },
+            { id: 40, name: 'Khoai tây chiên lắc phô mai', category: 'menu', price: 30000, image: 'images/Khoai tây chiên lắc phô mai.jpg' },
+            { id: 41, name: 'Ngô mỹ chiên bơ', category: 'menu', price: 30000, image: 'images/Ngô mỹ chiên bơ.jpg' },
+            { id: 42, name: 'Pizza bò bằm xúc xích', category: 'menu', price: 50000, description: 'Pizza nóng với toppings bò bằm và xúc xích, phô mai tan chảy', image: 'images/Pizza bò bằm xúc xích.jpg' },
+            { id: 43, name: 'Combo 1', category: 'combo', price: 465000, description: 'Gồm 2 suất Chả cá Lăng + 1 suất lòng cá + 1 niêu cháo cá nhỏ', image: 'images/combo1.jpg' },
+            { id: 44, name: 'Combo 1 đặc biệt', category: 'combo', price: 565000, description: 'Gồm 2 suất chả cá Lăng đặc biệt + 1 suất lòng cá Lăng + 1 niêu cháo cá nhỏ', image: 'images/combo1.jpg' },
 ];
 
 let cart = JSON.parse(localStorage.getItem('shopping_cart')) || [];
@@ -159,9 +163,10 @@ function displayProducts() {
     const grid = document.getElementById('productsGrid');
     grid.innerHTML = products.map(p => `
         <div class="product-card">
-            <img src="${p.image}" class="product-image">
+            <img src="${p.image}" class="product-image" onclick="showProductDetail(${p.id})" style="cursor:pointer">
             <div class="product-info">
                 <div class="product-name">${p.name}</div>
+                ${p.description ? `<div class="product-description">${p.description}</div>` : ''}
                 <div class="product-price">${p.price.toLocaleString()} VNĐ</div>
                 <button class="btn-add-cart" onclick="addToCart(${p.id}, '${p.name}', ${p.price})">Thêm vào giỏ</button>
             </div>
@@ -245,9 +250,10 @@ function showCategory(category) {
 
     grid.innerHTML = filteredProducts.map(p => `
         <div class="product-card">
-            <img src="${p.image}" class="product-image">
+            <img src="${p.image}" class="product-image" onclick="showProductDetail(${p.id})" style="cursor:pointer">
             <div class="product-info">
-                <div class="product-name">${p.name}</div>
+                <div class="product-name" onclick="showProductDetail(${p.id})" style="cursor:pointer">${p.name}</div>
+                 ${p.description  ? `<div class="product-description">${p.description}</div>`  : ''}
                 <div class="product-price">${p.price.toLocaleString()} VNĐ</div>
                 <button class="btn-add-cart" onclick="addToCart( ${p.id}, '${p.name}', ${p.price})">
                     Thêm vào giỏ
@@ -274,9 +280,9 @@ function searchProduct() {
 
     grid.innerHTML = filteredProducts.map(p => `
         <div class="product-card">
-            <img src="${p.image}" class="product-image">
+            <img src="${p.image}" class="product-image" onclick="showProductDetail(${p.id})" style="cursor:pointer">
             <div class="product-info">
-                <div class="product-name">${p.name}</div>
+                <div class="product-name" onclick="showProductDetail(${p.id})" style="cursor:pointer">${p.name}</div>
                 <div class="product-price">${p.price.toLocaleString()} VNĐ</div>
                 <button class="btn-add-cart"
                     onclick="addToCart(${p.id}, '${p.name}', ${p.price})">
@@ -286,5 +292,46 @@ function searchProduct() {
         </div>
     `).join('');
 }
+ //Hàm hiển thị Modal
+function showProductDetail(id) {
+    const product = products.find(p => p.id === id);
+    if (!product) return;
+
+    const modal = document.getElementById("productModal");
+    const modalBody = document.getElementById("modalBody");
+
+    modalBody.innerHTML = `
+        <img src="${product.image}" style="width:100%; border-radius:8px;">
+        <h2>${product.name}</h2>
+        <p style="color: #e74c3c; font-weight: bold; font-size: 20px;">
+            ${product.price.toLocaleString()} VNĐ
+        </p>
+        <p>${product.description || 'Không có mô tả cho món ăn này.'}</p>
+        <button class="btn-add-cart" onclick="addToCart(${product.id}, '${product.name}', ${product.price})">
+            Thêm vào giỏ hàng
+        </button>
+    `;
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("productModal").style.display = "none";
+}
 
 
+function updateActiveMenu(category) {
+    // 1. Lấy tất cả các thẻ có class là 'menu-item'
+    const items = document.querySelectorAll('.menu-item');
+
+    items.forEach(item => {
+        // 2. Xóa class 'active' khỏi tất cả các nút để reset trạng thái
+        item.classList.remove('active');
+
+        // 3. Kiểm tra xem nội dung onclick của nút có chứa tên category không
+        
+        const clickAttr = item.getAttribute('onclick');
+        if (clickAttr && clickAttr.includes(`'${category}'`)) {
+            item.classList.add('active');
+        }
+    });
+}

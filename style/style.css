@@ -508,3 +508,63 @@
     background: #8B4513; color: white; border: none; cursor: pointer; 
 }
     
+     /* modal chi tiết món ăn */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 15px; top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+/* 1. Ẩn miêu tả ở các thẻ sản phẩm bên ngoài */
+.product-card .product-description {
+    display: none !important;
+}
+
+/* 2. Vẫn cho phép hiển thị nội dung bên trong Modal chi tiết */
+#modalBody p {
+    display: block !important;
+}
+/* Thiết kế cho Logo trên Navbar */
+.navbar-logo {
+    height: 45px; /* Chiều cao vừa vặn với thanh Navbar */
+    width: auto;  /* Giữ đúng tỷ lệ ảnh */
+    margin-right: 12px;
+    border-radius: 4px; /* Bo góc nhẹ nếu logo hình vuông */
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); /* Tạo độ nổi cho logo */
+}
+
+.logo-area h1 {
+    font-family: 'Playfair Display', serif; /* Nếu bạn muốn font chữ sang trọng hơn */
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 600px) {
+    .navbar-logo {
+        height: 35px;
+    }
+    .navbar h1 {
+        font-size: 18px;
+    }
+}
