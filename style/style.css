@@ -568,3 +568,139 @@
         font-size: 18px;
     }
 }
+/* css cho liên hệ */
+
+    .footer {
+        background: #4e2c14; /* Màu nâu đậm đồng bộ với quán */
+        color: #fff;
+        padding: 40px 20px;
+        margin-top: 50px;
+        border-top: 4px solid #ffce67;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    .footer-section h3 {
+        color: #ffce67;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+
+    .footer-section p {
+        margin: 10px 0;
+        font-size: 15px;
+        opacity: 0.9;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-item {
+        text-decoration: none;
+        color: #fff;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    .social-item.fb { background: #1877F2; }
+    .social-item.zl { background: #0068FF; }
+    .social-item:hover { transform: translateY(-3px); opacity: 0.9; }
+
+    /* Khung chứa các nút */
+.contact-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+
+/* Định dạng chung cho nút */
+.contact-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    overflow: hidden; /* Để ảnh logo không tràn ra ngoài */
+    background: white;
+}
+
+/* Riêng nút Zalo */
+.zalo-btn img {
+    width: 100%;  /* Ảnh Zalo chiếm trọn nút */
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Riêng nút Gọi điện */
+.call-btn {
+    background-color: #2ecc71;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    animation: zoomPulse 2s infinite;
+}
+
+/* Hiệu ứng di chuột vào */
+.contact-btn:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+/* Hiệu ứng nhịp thở cho nút gọi */
+@keyframes zoomPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(46, 204, 113, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+}
+/* Nút Messenger */
+.messenger-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Đảm bảo các nút căn đều nhau */
+.contact-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    display: flex;
+    flex-direction: column; /* Xếp dọc các nút */
+    gap: 12px;
+    z-index: 9999;
+}
+
+.contact-btn {
+    width: 50px; /* Thu nhỏ lại một chút cho thanh thoát khi có nhiều nút */
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* Hiệu ứng khi di chuột vào */
+.contact-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+}
